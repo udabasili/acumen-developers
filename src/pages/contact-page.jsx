@@ -38,8 +38,17 @@ export default class ContactPage extends Component {
             template_params,
             process.env.REACT_APP_EMAILJS_UID)
         .then((result) => {
-            console.log(result)
-            toast.success("Email sent successfully", option);
+            if(result.status === 200){
+              toast.success("Email sent successfully", option)
+             this.setState({
+                name: '',
+                email: '',
+                phone: '',
+                dateOfCompletion: '',
+                description: ''
+              })
+
+            }
 
         }).catch((err) => {
             toast.warning('Something went wrong. Please try again later', option)
@@ -112,8 +121,8 @@ export default class ContactPage extends Component {
                     value={phone}
                     name="phone"
                     id="phone"
-                    className="form__input"
-                    pattern="[0-9]{10}"
+					className="form__input"
+					required
                   />
                   <label htmlFor="phone" className="form__label">
                     Phone
@@ -126,7 +135,7 @@ export default class ContactPage extends Component {
                     name="dateOfCompletion"
                     value={dateOfCompletion}
                     onChange={this.handleChange}
-                    id="dateOfCompletion"
+					id="dateOfCompletion"
                   />
                   <label htmlFor="dateOfCompletion" className="form__label">
                     Date of Completion
@@ -139,7 +148,8 @@ export default class ContactPage extends Component {
                     name="description"
                     id="description"
                     onChange={this.handleChange}
-                    placeholder="Put as much details as possible to get the correct quote"
+					placeholder="Put as much details as possible to get the correct quote"
+					required
                   />
                   <label htmlFor="description" className="form__label">
                     Project Description
