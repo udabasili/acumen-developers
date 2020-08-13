@@ -14,8 +14,9 @@ import Footer from './components/footer.component';
 
 function App() {
   return (
-
+    
     <Router>
+      <Navigation/>
 	  <Switch className = "route-wrapper" >
         <Route path='/' exact component={HomePage} />
         <Route path='/contact' exact component={ContactPage} />
