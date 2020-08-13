@@ -1,0 +1,19 @@
+.portfolio-page{
+    min-height: 100vh;
+
+}
+
+.portfolio{
+    width: 80%;
+    display: grid;
+    margin: 10rem auto;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    column-gap: 5%;
+    row-gap: 10%;
+
+    @include responsive(phone){
+        column-gap: 0;
+        row-gap: 10px;
+    }
+}
+

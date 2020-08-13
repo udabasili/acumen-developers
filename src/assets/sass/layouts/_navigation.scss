@@ -1,0 +1,164 @@
+.navigation{
+    display: flex;
+    width: 100%;
+    height: 8vh;
+    z-index: 10;
+    background-color: black;
+    border-bottom: $color-grey-dark 1px solid;
+
+    .logo-box{
+        flex-basis: 20%;
+
+        @include responsive(phone){
+            flex-basis: 50%;
+        }
+
+        @include responsive(tab-port) {
+            flex-basis: 50%;
+        }
+
+        @include responsive(tab-land) {
+            flex-basis: 50%;
+        }
+    }
+
+    &__list{
+        display: flex;
+        flex-basis: 80%;
+        align-items: center;
+        justify-content: flex-end;
+
+         @include responsive(phone) {
+            display: none;
+            flex-direction: column;
+            background-color: rgba($color: #000000, $alpha: .8);
+            height: 100%;
+            margin-top: 0;
+            position: absolute;
+            right: 0;
+            top: 8vh;
+            align-items: center;
+            justify-content: flex-start;
+            z-index: 5;
+            width: 100%;
+            transition: all 2s;
+         }
+    }
+
+    &__item{
+        list-style: none;
+        padding: 2rem;
+    }
+
+    &__link{
+
+        &,
+        &:link{
+            text-decoration: none;
+            font-size: 2rem;
+            font-weight: bolder;
+            text-transform: capitalize;
+            font-family: 'Alegreya Sans SC';
+            color: white;
+
+            @include responsive(phone){
+                text-transform: uppercase;
+                font-size: 3rem;
+            }
+        }
+
+        &:hover{
+            color: $color-primary-light;
+        }
+
+        &:active{
+            color: $color-primary;
+            opacity: .6;
+        }
+
+
+    }
+
+    &__button{
+        border: 2px solid white;
+        display: none;
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        position: relative;
+        cursor: pointer;
+        margin: auto;
+
+        @include responsive(phone){
+            display: flex;
+        }
+
+        &:hover{
+            @include responsive(phone) {
+                background-color: $color-primary-light;
+            }
+        }
+    }
+
+    &__checkbox{
+        display: none;
+    }
+
+    &__checkbox:checked ~ &__list{
+        display: flex;
+
+    }
+    
+    &__checkbox:checked~&__button &__icon {
+        background-color: transparent;
+    }
+
+    &__checkbox:checked~ &__button &__icon::before {
+        transform: rotate(45deg);
+        left: 0;
+        top: 0;
+    }
+
+    &__checkbox:checked~&__button &__icon::after {
+        transform: rotate(-45deg);
+        left: 0;
+        top: 0;
+
+    }
+
+    &__icon{
+        
+        top: 50%;
+
+        &,
+        &::before,
+        &::after {
+            width: 3rem;
+            height: 1px;
+            left: 50%;
+            position: absolute;
+            background-color: white;
+            transform: translate(-50%);
+        }
+
+        &::before {
+            top: -.4rem;
+        }
+
+        &::after {
+            top: .4rem;
+        }
+
+        &::before,
+        &::after{
+            content: ' ';
+            display: inline-block;
+        }
+
+    }
+}
+
+.active-class {
+    color: $color-primary;
+    opacity: .6;
+}

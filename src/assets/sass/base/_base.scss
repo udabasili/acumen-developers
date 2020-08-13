@@ -1,0 +1,49 @@
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html{
+    font-size: 62.5%;
+    color: $color-grey-dark;
+
+    @include responsive(phone){
+        font-size: 50%;
+    }
+}
+
+body {
+    position: relative;
+}
+
+section {
+    padding: 20vh 0;
+    text-align: center;
+}
+.switch-wrapper {
+    position: relative;
+}
+
+.switch-wrapper>div {
+    position: absolute;
+}
+
+.Toastify__toast-container--top-center {
+    top: 35%;
+    left: 50%;
+    text-align: center;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    @include responsive(phone){
+        width: 50%;
+    }
+}
+:invalid{
+    label{
+            color: black;
+        }
+    color: red;
+}

@@ -1,0 +1,77 @@
+.form{
+    width: 40%;
+    margin: 0 auto;
+
+    @include responsive(phone){
+        width: 80%;
+    }
+
+    @include responsive(tab-port) {
+        width: 70%;
+    }
+
+    @include responsive(tab-land) {
+        width: 60%;
+    }
+
+    &__control{
+        width: 100%;
+        background-color: white;
+        position: relative;
+        margin: 2rem 0;
+        border: 1px solid black;
+        height: 6rem;
+        border-radius: 4px;
+
+        &--text-area{
+            width: 100%;
+            background-color: white;
+            position: relative;
+            margin: 2rem 0;
+            border: 1px solid black;
+            height: 20rem;
+            border-radius: 4px;
+        }
+
+    }
+
+    &__input{
+        border: none;
+        height: 100%;
+        width: 100%;
+        font-size: 1.5rem;
+        padding: 2rem;
+        padding-bottom: 0;
+        outline: none;
+        background-color: transparent;
+
+        &:invalid{
+            color: red;
+        }
+    }
+
+    &__text-area{
+        border: none;
+        height: 100%;
+        width: 100%;
+        font-size: 1.5rem;
+        padding: 3rem;
+        padding-bottom: 0;
+        outline: none;
+        background-color: transparent;
+    }
+    &__label{
+        position: absolute;
+        left: 2%;
+        top: 4%;
+        font-size: 1.5rem;
+    }
+}
+
+.form__input:focus ~ .form__label{
+    font-size: 1rem;
+}
+
+.form__text-area:focus~.form__label {
+    font-size: 1rem;
+}

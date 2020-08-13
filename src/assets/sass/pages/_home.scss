@@ -1,0 +1,48 @@
+.home-page{
+    width: 100%;
+
+    min-height: 100vh;
+}
+
+
+.row {
+    margin: 0 auto;
+    width: 80vw;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    column-gap: 10px;
+    row-gap: 10px;
+
+    &:not(:last-child) {
+        margin-bottom: $gutter-vertical;
+
+    }
+
+}
+
+.section-box {
+    font-size: 1.5rem;
+    padding: 2.5rem;
+    height: 50vh;
+    text-align: center;
+    border-radius: 3px;
+    transition: transform .3s;
+
+    @include responsive(phone){
+        height: 35vh;
+    }
+
+    &__icon {
+        font-size: 6rem;
+        margin-bottom: 5rem;
+        display: inline-block;
+        color: $color-primary;
+    }
+    &__text {
+        font-size: 2rem;
+    }
+}
+
+.react-slideshow-container .default-nav{
+    display: none;
+}

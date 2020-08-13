@@ -1,25 +1,37 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import HomePage from './pages/home-page';
+import Navigation from './components/navigation.component';
+import ReviewsPage from './pages/reviews-page';
+import ContactPage from './pages/contact-page';
+import FAQPage from './pages/faq-page';
+import PortfolioPage from './pages/portfolio-page';
+
+import {
+	spring,
+	AnimatedSwitch,
+	AnimatedRoute
+} from 'react-router-transition';
+import Footer from './components/footer.component';
+
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Navigation/>
+	  <Switch className = "route-wrapper" >
+        <Route path='/' exact component={HomePage} />
+        <Route path='/contact' exact component={ContactPage} />
+		<Route path ='/faq' exact component ={FAQPage}/>
+        <Route path ='/reviews' exact component ={ReviewsPage}/>
+		<Route path = '/portfolio' exact component = {PortfolioPage}/>
+	   </Switch>
+	   <Footer/>
+    </Router>
+   
   );
 }
 
