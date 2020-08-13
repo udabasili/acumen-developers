@@ -1,3 +1,81 @@
 .review-page{
     min-height: 100vh;
+
+    .review-list{
+        text-align: center;
+    }
+}
+
+.review{
+    &__list{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    &__item{
+        background-color: rgb(235, 235, 235);
+        box-shadow: $box-shadow;
+        width: 60%;
+        margin: 2rem auto;
+        text-align: left;
+        color: black;
+
+         @include responsive(phone) {
+             width: 90%;
+         }
+
+         @include responsive(tab-port) {
+             width: 90%;
+         }
+
+         @include responsive(tab-land) {
+             width: 90%;
+         }
+
+        .name{
+            font-size: 3rem;
+            font-weight: bolder;
+            background-color: black;
+            color: white;
+            text-transform: uppercase;
+            text-align: center;
+            padding: 2rem;
+
+            @include responsive(phone){
+                font-size: 1.6rem;
+            }
+
+            @include responsive(tab-port) {
+                font-size: 2rem;
+            }
+            
+            
+        }
+
+        .detail{
+            font-size: 1.4rem;
+            padding: 1rem 3rem;
+
+            @include responsive(phone) {
+                font-size: 1.1rem;
+            }
+
+            @include responsive(tab-port) {
+            }
+
+            .label{
+            }
+
+            .value{
+                font-weight: bold;
+
+            }
+        }
+
+        .review{
+            font-size: 1.7rem;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+    }
 }

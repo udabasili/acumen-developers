@@ -8,7 +8,7 @@
 
 html{
     font-size: 62.5%;
-    color: $color-grey-dark;
+    color: black;
 
     @include responsive(phone){
         font-size: 50%;
@@ -17,6 +17,8 @@ html{
 
 body {
     position: relative;
+        background-color: rgb(197, 197, 197);
+
 }
 
 section {
