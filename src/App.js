@@ -7,12 +7,6 @@ import ReviewsPage from './pages/reviews-page';
 import ContactPage from './pages/contact-page';
 import FAQPage from './pages/faq-page';
 import PortfolioPage from './pages/portfolio-page';
-
-import {
-	spring,
-	AnimatedSwitch,
-	AnimatedRoute
-} from 'react-router-transition';
 import Footer from './components/footer.component';
 
 
