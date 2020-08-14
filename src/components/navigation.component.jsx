@@ -3,6 +3,20 @@ import Icon from './icon.component'
 import { Link , NavLink} from 'react-router-dom'
 import Logo from '../assets/images/icon2.png'
 export default function Navigation() {
+
+    React.useEffect(() => {
+      const navLinks = document.querySelectorAll(".navigation__list");
+      const checkbox = document.querySelector(".navigation__checkbox");
+      Array.from(navLinks).map((navLink) =>
+        navLink.addEventListener("click", function () {
+          console.log(checkbox.checked);
+          checkbox.checked = false;
+        })
+      );
+      return () => {
+      };
+    }, []);
+
     return (
         <nav className='navigation'>
             <div className="logo-box">
@@ -33,8 +47,17 @@ export default function Navigation() {
                         activeClassName='active-class' 
                         className="navigation__link">
                         faq</NavLink></li>
-                <li className="navigation__item"><NavLink to="/contact" activeClassName='active-class' className="navigation__link">contact</NavLink></li>
-                <li className="navigation__item"><NavLink to="/reviews" activeClassName='active-class'className="navigation__link">reviews</NavLink></li>
+                <li className="navigation__item">
+                    <NavLink to="/contact" 
+                        activeClassName='active-class' 
+                        className="navigation__link">
+                            contact
+                    </NavLink>
+                </li>
+                <li className="navigation__item">
+                    <NavLink to="/reviews" 
+                        activeClassName='active-class' 
+                    className="navigation__link">reviews</NavLink></li>
             </ul>
         </nav>
     )
