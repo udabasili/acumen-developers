@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import MainHeading from '../components/main-heading.component'
 import AddReview from '../components/add-review.component'
 import ReviewList from '../components/review-list.component'

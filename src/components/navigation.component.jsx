@@ -1,6 +1,5 @@
 import React from 'react'
-import Icon from './icon.component'
-import { Link , NavLink} from 'react-router-dom'
+import {  NavLink} from 'react-router-dom'
 import Logo from '../assets/images/icon2.png'
 export default function Navigation() {
 
@@ -20,7 +19,7 @@ export default function Navigation() {
     return (
         <nav className='navigation'>
             <div className="logo-box">
-                <span><img src={Logo}  width='25' height='25'/></span>
+                <span><img src={Logo}  width='25' height='25' alt='web-logo'/></span>
                 <span>Acumen Developers</span>
             </div>
             <input type='checkbox' className="navigation__checkbox" id='navigate' />

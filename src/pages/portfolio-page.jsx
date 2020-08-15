@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import Card from '../components/card.component'
 import { applicationData } from '../data/application-data.data'
 import MainHeading from '../components/main-heading.component'

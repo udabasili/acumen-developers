@@ -1,6 +1,6 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFileCode, faFile, faShieldAlt, faMobileAlt } from '@fortawesome/free-solid-svg-icons'
+import { faFileCode, faShieldAlt, faMobileAlt } from '@fortawesome/free-solid-svg-icons'
 
 export default function AboutUs() {
     return (

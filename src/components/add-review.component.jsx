@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import firebase from "../services/Firebase";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default class AddReview extends Component {
   constructor() {
@@ -15,10 +17,20 @@ export default class AddReview extends Component {
   }
 
   handleSubmit = (e) => {
+    const option = {
+      position: "top-center",
+      autoClose: 2000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    };
     e.preventDefault();
     this.ref
       .add(this.state)
       .then((docRef) => {
+        toast.success("Review Added Successfully", option);
         this.setState({
           name: "",
           websiteName: "",
@@ -28,6 +40,7 @@ export default class AddReview extends Component {
         });
       })
       .catch((error) => {
+        toast.warning('Something went wrong. Please try again later', option)
         console.error("Error adding document: ", error);
       });
   };
@@ -50,6 +63,17 @@ export default class AddReview extends Component {
     } = this.state;
     return (
       <div className="review-page">
+        <ToastContainer
+          position="top-center"
+          autoClose={2000}
+          hideProgressBar
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
         <section className="review">
           <h2 className="header-secondary">Write your Review </h2>
           <form className="form" onSubmit={this.handleSubmit}>

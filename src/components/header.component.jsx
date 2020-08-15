@@ -2,7 +2,6 @@ import React from 'react'
 import { Slide } from 'react-slideshow-image';
 import ReactTypingEffect from "react-typing-effect";
 import 'react-slideshow-image/dist/styles.css'
-import Image from '../assets/images/Image2.png';
 import Image2 from '../assets/images/Image.png';
 
 const slideImages = [
