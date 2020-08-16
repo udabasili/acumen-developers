@@ -11,19 +11,20 @@ import Footer from './components/footer.component';
 import ReactGA from 'react-ga';
 
 
-
 function App({history}) {
-	history.listen(location => {
-		ReactGA.set({
-			page: location.pathname
-		})
-		ReactGA.pageview(location.pathname)
-	})
+	
 
   useEffect(() => {
-    ReactGA.pageview(window.location.pathname)
+	ReactGA.initialize(process.env.REACT_APP_ANALYTICS_ID, {
+		debug: true,
+		titleCase: false,
+		gaOptions: {
+			userId: 123
+		}
+	});
+	ReactGA.pageview(window.location.pathname + window.location.search);
  
-  }, [])
+  })
   return (
     
     <React.Fragment >

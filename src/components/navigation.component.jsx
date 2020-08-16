@@ -1,6 +1,6 @@
 import React from 'react'
 import {  NavLink} from 'react-router-dom'
-import Logo from '../assets/images/icon2.png'
+import Logo from '../assets/images/Acumen-Logo.png'
 export default function Navigation() {
 
     React.useEffect(() => {
@@ -19,7 +19,7 @@ export default function Navigation() {
     return (
         <nav className='navigation'>
             <div className="logo-box">
-                <span><img src={Logo}  width='25' height='25' alt='web-logo'/></span>
+                <span><img src={Logo} className='logo' alt='web-logo'/></span>
                 <span>Acumen Developers</span>
             </div>
             <input type='checkbox' className="navigation__checkbox" id='navigate' />

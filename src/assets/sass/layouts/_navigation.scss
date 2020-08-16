@@ -10,17 +10,19 @@
 
     .logo-box{
         display: flex;
-        flex-basis: 20%;
+        flex-basis: 40%;
         font-size: 2rem;
         font-style: oblique;
         font-weight: bold;
         color: white;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
         padding-left: 3rem;
 
         @include responsive(phone){
-            flex-basis: 50%;
+            flex-basis: 80%;
+            font-size: 12px;
+            justify-content: flex-start;
         }
 
         @include responsive(tab-port) {
@@ -33,13 +35,28 @@
 
         span:first-child{
             display: flex;
-            align-self: flex-end;
+            align-self: flex-start;
+            margin-right: 1rem;
+
+            .logo{
+                width: 3rem;
+                height: 3rem;
+
+                @include responsive(phone) {
+                    width: 20px;
+                    height: 20px;
+                }
+
+
+
+                
+            }
         }
     }
 
     &__list{
         display: flex;
-        flex-basis: 80%;
+        flex-basis: 70%;
         align-items: center;
         justify-content: flex-end;
 
