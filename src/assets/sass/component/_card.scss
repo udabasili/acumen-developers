@@ -2,6 +2,25 @@
     height: 52rem;
     position: relative;
     perspective: 1000;
+    @include responsive(phone) {
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 1.5rem 4rem rgba(black, .15);
+
+    }
+    @include responsive(tab-port) {
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 1.5rem 4rem rgba(black, .15);
+
+    }
+
+    @include responsive(tab-land) {
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 1.5rem 4rem rgba(black, .15);
+
+    }
 
 
 
@@ -18,6 +37,24 @@
         border-radius: 3px;
         overflow: hidden;
         box-shadow: 0 1.5rem 4rem rgba(black, .15);
+
+        @include responsive(phone) {
+            position: relative;
+            box-shadow: none;
+            overflow: visible;
+        }
+
+        @include responsive(tab-port) {
+            position: relative;
+            box-shadow: none;
+            overflow: visible;
+        }
+
+        @include responsive(tab-land) {
+            position: relative;
+            box-shadow: none;
+            overflow: visible;
+        }
     }
 
     &__front{
@@ -27,14 +64,57 @@
     &__back{
         transform: rotateY(180deg);
         background-blend-mode: luminosity;
+
+
+        @include responsive(phone){
+            transform: rotateY(0deg);
+            background-color: transparent;
+        }
+        @include responsive(tab-port) {
+            transform: rotateY(0deg);
+            background-color: transparent;
+        }
+
+        @include responsive(tab-land) {
+            transform: rotateY(0deg);
+            background-color: transparent;
+        }
     }
 
     &:hover &__front {
         transform: rotateY(-180deg);
+
+        @include responsive(phone) {
+            transform: none;
+        }
+
+        @include responsive(tab-port) {
+            transform: none;
+
+        }
+
+        @include responsive(tab-land) {
+            transform: none;
+
+        }
     }
 
     &:hover &__back {
         transform: rotateY(0);
+        
+        @include responsive(phone) {
+            transform: none;
+        }
+
+        @include responsive(tab-port) {
+            transform: none;
+
+        }
+
+        @include responsive(tab-land) {
+            transform: none;
+
+        }
     }
 
 
@@ -77,10 +157,23 @@
         padding: 2.2rem 3rem;
         color: black;
         font-size: 2rem;
+
+        @include responsive(phone) {
+            display: none;
+        }
+
+        @include responsive(tab-port) {
+            display: none;
+        }
+
+        @include responsive(tab-land) {
+            display: none;
+        }
     }
 
     &__details {
         padding: 3rem;
+        
 
         ul {
             list-style: none;
@@ -102,10 +195,40 @@
 
 .card:nth-child(odd) .card__back{
     background-color: $color-primary;
+
+    @include responsive(phone) {
+        transform: rotateY(0deg);
+        background-color: transparent;
+    }
+
+    @include responsive(tab-port) {
+        transform: rotateY(0deg);
+        background-color: transparent;
+    }
+
+    @include responsive(tab-land) {
+        transform: rotateY(0deg);
+        background-color: transparent;
+    }
 }
 
 .card:nth-child(even) .card__back {
     background-color: $color-primary-dark;
+
+    @include responsive(phone) {
+        transform: rotateY(0deg);
+        background-color: transparent;
+    }
+
+    @include responsive(tab-port) {
+        transform: rotateY(0deg);
+        background-color: transparent;
+    }
+
+    @include responsive(tab-land) {
+        transform: rotateY(0deg);
+        background-color: transparent;
+    }
 
 
 }
@@ -128,13 +251,15 @@
     background-color: $color-primary-dark;
 }
 
+
+
 .mobile{
     
     .card__front{
         
     }
     .card__picture{
-        height: 70%;
+        height: 120%;
     }
 
     .card_details{
@@ -149,8 +274,8 @@
         color: white;
         right: 0rem;
         width: 100%;
-        top: 35rem;
-        
+        top: 30rem;
+
         .card__heading-span{
             background-color: black;
         }
