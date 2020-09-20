@@ -4,16 +4,69 @@
 }
 
 .portfolio{
-    width: 80%;
-    display: grid;
-    margin: 10rem auto;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    column-gap: 5%;
-    row-gap: 10%;
+    width: 100%;
+    background-color: white;
 
-    @include responsive(phone){
-        column-gap: 0;
-        row-gap: 10px;
+    
+
+
+    &__card-list{
+        display: grid;
+        margin: 0 auto;
+        width: 60%;
+        grid-template-columns: repeat(auto-fit, minmax(315px, 1fr));
+        column-gap: 5%;
+        row-gap: 3rem;
+
+        @include responsive(phone) {
+            width: 90%;
+        }
+            
+    }
+
+    
+    &__nav{
+        border-bottom: 3px solid black;
+        margin-top: 4rem;
+    }
+
+    &__list{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+    }
+
+    &__item{
+        list-style: none;
+        background-color: $color-primary-dark;
+
+        &:nth-child(2) {
+            border-left: 1px solid black;
+        }
+        .active{
+            color: $color-primary-dark;
+            background-color: white;
+            
+        }
+    }
+    &__link{
+        &,
+        &:link{
+            color: #ffffff;
+            display: block;
+            padding: 2rem 3rem;
+            font-size: 2rem;
+            text-decoration: none;
+            font-family: 'Alegreya Sans SC';
+
+        }
+
+        &:hover{
+            color: $color-primary-dark;
+            background-color: rgb(207, 207, 207);
+        }
+
     }
 }
 

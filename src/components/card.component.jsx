@@ -5,11 +5,12 @@ export default function Card({
         name, 
         link,
         description,
+        mobile=null,
         gitHub,
         programs}) {
 
             return (
-              <div className="card">
+              <div className={`card ${mobile}`}>
                 <div className="card__front card__side">
                   <div
                     className="card__picture"
@@ -43,7 +44,8 @@ export default function Card({
                     >
                       Open
                     </a>
-                    <a
+                    {!mobile &&
+                      <a
                       href={gitHub}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -51,6 +53,8 @@ export default function Card({
                     >
                       gitHub
                     </a>
+                    }
+                    
                   </div>
                 </div>
               </div>

@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import Card from '../components/card.component'
-import { applicationData } from '../data/application-data.data'
 import MainHeading from '../components/main-heading.component'
+import MobilePortfolio from '../components/mobile-portfolio.component'
+import WebsitePortfolio from '../components/website-portfolio.component'
+import { NavLink } from 'react-router-dom'
 
 export default class PortfolioPage extends Component {
     static propTypes = {
@@ -9,20 +10,35 @@ export default class PortfolioPage extends Component {
     }
 
     render() {
+        console.log(this.props.title)
+        const title = this.props.title
         return (
             <div className='portfolio-page'>
                 <MainHeading title='works'/>
+                <nav className='portfolio__nav'>
+                    <ul className='portfolio__list'>
+                        <li className='portfolio__item'>
+                            <NavLink to='/portfolio/website' activeClassName='active' className='portfolio__link'>
+                                Websites
+                            </NavLink>
+                        </li>
+                        <li className='portfolio__item'>
+                            < NavLink to = '/portfolio/mobile'
+                                activeClassName = 'active'
+                                className = 'portfolio__link' >
+                                    Mobile
+                            </NavLink>
+                        </li>
+                    </ul>
+
+                </nav>
                 <section className="portfolio">
-                    {applicationData.map((data, index) => (
-                        <Card 
-                            image={data.image} 
-                            description={data.description}
-                            name={data.name} 
-                            programs={data.programs} 
-                            link={data.link}
-                            gitHub={data.github}
-                            key={index}/>
-                    ))}
+                    {title === 'mobile' && 
+                        <MobilePortfolio/>
+                    }
+                    {title === 'website' && 
+                        <WebsitePortfolio/>
+                    }
                 </section>
             </div>
         )

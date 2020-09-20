@@ -35,7 +35,7 @@ export default function Navigation() {
                     </NavLink>
                 </li>
                 <li className="navigation__item">
-                    <NavLink exact to="/portfolio" 
+                    <NavLink exact to="/portfolio/website" 
                         className="navigation__link"
                         activeClassName='active-class'>
                         portfolio
