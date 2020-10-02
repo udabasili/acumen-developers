@@ -1,0 +1,21 @@
+.service-page{
+    .services{
+        display: grid;
+        margin: 2rem;
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 2rem;
+        column-gap: 2rem;
+
+        @include responsive(phone){
+            grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+        }
+
+        @include responsive(tab-port) {
+            grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+        }
+
+        @include responsive(tab-land) {
+            grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+        }
+    }
+}

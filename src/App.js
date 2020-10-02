@@ -10,6 +10,7 @@ import PortfolioPage from './pages/portfolio-page';
 import Footer from './components/footer.component';
 import ReactGA from 'react-ga';
 import NotFoundPage from './components/not-found';
+import ServicePage from './pages/services-page';
 
 
 function App({history}) {
@@ -35,14 +36,14 @@ function App({history}) {
 			<Route path='/contact' exact component={ContactPage} />
 			<Route path ='/faq' exact component ={FAQPage}/>
 			<Route path ='/reviews' exact component ={ReviewsPage}/>
-			<Route path = '/portfolio/mobile' exact render= {(props) =>(
+			<Route path ='/services' exact component ={ServicePage}/>
+			<Route path = '/portfolio/mobile/:mobileName' exact render= {(props) =>(
 				<PortfolioPage {...props} title='mobile'/>
 			)}/>
-			<Route path = '/portfolio/website' exact render= {(props) =>(
+			<Route path = '/portfolio/website/:websiteName' exact render= {(props) =>(
 				<PortfolioPage {...props} title='website'/>
 			)}/>
 			<Route path='/404' component={NotFoundPage} />
-			<Redirect to='/404'/>
 
 		</Switch>
 		<Footer/>

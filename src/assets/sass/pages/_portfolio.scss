@@ -5,10 +5,25 @@
 
 .portfolio{
     width: 100%;
+    display: grid;
     background-color: white;
+    height: 100vh;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: 1fr;
 
-    
+    @include responsive(phone) {
+        display: unset;
+        grid-template-rows: 30% 70%;
+        grid-template-columns: 1fr;
 
+    }
+
+    @include responsive(tab-port) {
+        display: unset;
+        grid-template-rows: 30% 70%;
+        grid-template-columns: 1fr;
+
+    }
 
     &__card-list{
         display: grid;
@@ -19,6 +34,10 @@
         row-gap: 3rem;
 
         @include responsive(phone) {
+            width: 90%;
+        }
+
+        @include responsive(tab-port) {
             width: 90%;
         }
             
@@ -37,23 +56,12 @@
         
     }
 
-    &__item{
-        list-style: none;
-        background-color: $color-primary-dark;
-
-        &:nth-child(2) {
-            border-left: 1px solid black;
-        }
-        .active{
-            color: $color-primary-dark;
-            background-color: white;
-            
-        }
-    }
+    
     &__link{
         &,
         &:link{
-            color: #ffffff;
+            color: black;
+            background-color: white;
             display: block;
             padding: 2rem 3rem;
             font-size: 2rem;
@@ -68,5 +76,409 @@
         }
 
     }
+
+    &__item {
+        list-style: none;
+        background-color: $color-primary-dark;
+
+        
+        &:nth-child(2) {
+            border-left: 1px solid black;
+        }
+
+        .active {
+            color: white;
+            background-color: black;
+
+        }
+    }
 }
 
+.portfolio-list{
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+
+    @include responsive(phone){
+        background-color: white;
+        width: unset;
+        height: 12vh;
+        display: flex;
+        flex-direction: row;
+
+    }
+
+    @include responsive(tab-port) {
+        background-color: white;
+        width: unset;
+        height: 10vh;
+        display: flex;
+        flex-direction: row;
+
+    }
+
+
+    &__item{
+        height: 30%;
+        display: inherit;
+        flex-direction: inherit;
+        align-items: center;
+        width: 100%;
+        border-bottom: 2px solid black;
+        padding: 3rem 0;
+        text-decoration: none;
+
+
+
+        @include responsive(phone){
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            height: 100%;
+        }
+
+        @include responsive(tab-port) {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            height: 100%;
+        }
+
+        &:hover{
+            background-color: rgb(145, 145, 145);
+        }
+    }
+
+    &__icon{
+        width: 8rem;
+        height: 8rem;
+        border-radius: 50%;
+        background-color: $color-primary-dark;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @include responsive(phone){
+            width: 5rem;
+            height: 5rem;
+        }
+
+        @include responsive(tab-port) {
+            width: 5rem;
+            height: 5rem;
+        }
+    }
+
+    &__logo{
+        width: 7rem;
+        border-radius: 50%;
+        height: 7rem;
+        background-color: black;
+        background-blend-mode: lighten;
+
+        @include responsive(phone) {
+            width: 5rem;
+            height: 5rem;
+        }
+
+        @include responsive(tab-port) {
+            width: 5rem;
+            height: 5rem;
+        }
+    }
+
+    &__title{
+        color: black;
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-decoration: none;
+
+        @include responsive(phone){
+            font-size: 1.4rem;
+        }
+
+        @include responsive(phone) {
+            font-size: 1.4rem;
+        }
+    }
+
+    .selected{
+        background-color:black; 
+
+         .portfolio-list__title {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+    }
+}
+
+.portfolio-detail{
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 50% ;
+    grid-template-columns: 100%;
+    background-color:black;
+    color: white;
+
+    @include responsive(phone){
+        display: flex;
+        height: 70vh;
+        flex-direction: column;
+    }
+
+    @include responsive(tab-port) {
+        display: flex;
+        height: 70vh;
+        flex-direction: column;
+    }
+
+    .each-slide>div {
+
+        background-blend-mode: normal;
+        background-position: top;
+
+        @include responsive(tab-port) {
+            background-size: 100% 100%;
+        }
+    }
+
+
+
+    &__slide{
+        position: relative;
+        width: 100%;
+        height: 100%;
+
+        @include responsive(phone){
+            display: unset;
+            height: 40vh;
+            width: 100%;
+        }
+
+        @include responsive(tab-port) {
+            display: unset;
+            height: 30vh;
+            width: 100%;
+        }
+
+        .header-tertiary{
+            position: absolute;
+            padding: 2rem;
+            bottom: 0;
+            font-size: 3rem;
+            background-color: $color-primary-dark;
+            color: white;
+
+            @include responsive(phone) {
+                font-size: 2rem;
+            }
+
+            @include responsive(tab-port) {
+                position: relative;
+                background-color: black;
+                text-align: center;
+                text-transform: uppercase;
+                font-size: 2rem;
+            }
+
+            
+        }
+        .react-slideshow-wrapper .images-wrap {
+            height: 100%;
+        }
+
+        .react-slideshow-container .default-nav {
+            display: flex;
+        }
+
+        .react-slideshow-wrapper.slide {
+            width: 100%;
+            height: 50vh;
+
+            @include responsive(phone){
+                height: 50vh;
+
+            }
+
+            @include responsive(tab-port) {
+                height: 30vh;
+            }
+        }
+
+        .each-slide {
+            background-color: white;
+            height: 100%;
+
+            @include responsive(phone) {
+                height: unset;
+            }
+            @include responsive(tab-port) {
+                height: unset;
+
+            }
+        }
+
+        .each-slide>div {
+            background-color: white;
+            background-repeat: no-repeat;
+
+
+
+            @include responsive(phone){
+                background-size: 100% 100%;
+
+            }
+            @include responsive(tab-port) {
+                background-size: contain;
+            }
+        }
+    }
+
+    &__information {
+        width: 60%;
+        margin: 4rem auto;
+        text-align: justify;
+
+
+        @include responsive(phone){
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin: 1rem auto;
+            background-color: black;
+            width: 100%;
+        }
+
+        @include responsive(tab-port) {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            background-color: black;
+            width: 100%;
+            padding: 3rem;
+        }
+
+        .paragraph{
+            font-size: 1.5rem;
+
+            @include responsive(phone){
+                font-size: 1.4rem
+                ;
+                padding: 0 2rem;
+            }
+        }
+
+        .program{
+
+            &__list{
+            display: flex;
+            flex-wrap: wrap;
+            }
+
+            &__item{
+                background-color: gray;
+                font-size: 1.6rem;
+                margin: 1rem .5rem;
+                padding: 1rem 2rem;
+                border-radius: 10px;
+
+                @include responsive(phone){
+                    font-size: 1.4rem;
+                                    padding: .5rem 1rem;
+
+                }
+            }
+        }
+    }
+}
+
+.mobile{
+    grid-template-rows: 100vh;
+    grid-template-columns: 40% 60%;
+
+    @include responsive(phone){
+        display: flex;
+        height: 100%;
+    }
+
+    
+
+    .react-slideshow-wrapper.slide {
+        width: 100%;
+        height: 100%;
+
+        @include responsive(phone) {
+            height: 50vh;
+
+        }
+
+        @include responsive(tab-port) {
+            height: 30vh;
+        }
+    }
+
+
+    .each-slide > div{
+        background-size: 100% 100%;
+        background-blend-mode: normal;
+        background-repeat: no-repeat;
+
+        @include responsive(phone) {
+            background-size: 100% 170%;
+            background-repeat: no-repeat;
+        }
+
+        @include responsive(tab-port) {
+            background-size: cover;
+            background-repeat: repeat;
+        }
+    }
+
+        .header-tertiary {
+            position: relative;
+            padding: 3rem 0;
+            font-size: 4rem;
+            background-color: transparent;
+            color: white;
+            text-transform: uppercase;
+
+            @include responsive(phone) {
+                font-size: 2rem;
+                padding: 2rem;
+                background-color: black;
+            }
+
+            @include responsive(tab-port){
+                font-size: 2rem;
+                padding: 2rem;
+                text-align: center;
+                background-color: black;
+            }
+
+        }
+
+        .portfolio-detail__information {
+            width: 100%;
+            margin: 4rem auto;
+            padding: 3rem;
+            text-align: justify;
+            height: 30vh;
+
+            @include responsive(phone) {
+                margin: 1.2rem auto;
+            }
+                
+        }
+
+        .button-container{
+            display: flex;
+
+            
+        }
+}

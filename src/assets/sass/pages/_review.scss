@@ -9,28 +9,29 @@
 .review{
     &__list{
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+
+        @include responsive(phone){
+            grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+        }
+
+        @include responsive(tab-port) {
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        }
+
+        @include responsive(tab-land) {
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        }
     }
 
     &__item{
         background-color: rgb(235, 235, 235);
         box-shadow: $box-shadow;
-        width: 60%;
+        width: 90%;
         margin: 2rem auto;
         text-align: left;
         color: black;
 
-         @include responsive(phone) {
-             width: 90%;
-         }
-
-         @include responsive(tab-port) {
-             width: 90%;
-         }
-
-         @include responsive(tab-land) {
-             width: 90%;
-         }
 
         .name{
             font-size: 3rem;

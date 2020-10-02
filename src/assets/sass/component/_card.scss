@@ -31,96 +31,20 @@
         left: 0;
         width: 100%;
         height: 100%;
-        transition: all 1s ;
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
+        background-color: white;
         border-radius: 3px;
         overflow: hidden;
         box-shadow: 0 1.5rem 4rem rgba(black, .15);
 
-        @include responsive(phone) {
-            position: relative;
-            box-shadow: none;
-            overflow: visible;
-        }
-
-        @include responsive(tab-port) {
-            position: relative;
-            box-shadow: none;
-            overflow: visible;
-        }
-
-        @include responsive(tab-land) {
-            position: relative;
-            box-shadow: none;
-            overflow: visible;
-        }
-    }
-
-    &__front{
-        background-color: white;
-    }
-
-    &__back{
-        transform: rotateY(180deg);
-        background-blend-mode: luminosity;
-
-
-        @include responsive(phone){
-            transform: rotateY(0deg);
-            background-color: transparent;
-        }
-        @include responsive(tab-port) {
-            transform: rotateY(0deg);
-            background-color: transparent;
-        }
-
-        @include responsive(tab-land) {
-            transform: rotateY(0deg);
-            background-color: transparent;
-        }
-    }
-
-    &:hover &__front {
-        transform: rotateY(-180deg);
-
-        @include responsive(phone) {
-            transform: none;
-        }
-
-        @include responsive(tab-port) {
-            transform: none;
-
-        }
-
-        @include responsive(tab-land) {
-            transform: none;
-
-        }
-    }
-
-    &:hover &__back {
-        transform: rotateY(0);
         
-        @include responsive(phone) {
-            transform: none;
-        }
-
-        @include responsive(tab-port) {
-            transform: none;
-
-        }
-
-        @include responsive(tab-land) {
-            transform: none;
-
-        }
     }
+
+
 
 
     &__picture{
         background-color: $color-primary;
-        background-size: cover;
+        background-size: contain;
         background-blend-mode: luminosity;
         background-repeat: no-repeat;
         height: 20rem;
@@ -144,94 +68,32 @@
     }
 
     &__heading-span {
-        padding: 1rem 1.5rem;
+        padding:.3rem 1.5rem;
         -webkit-box-decoration-break: clone;
         box-decoration-break: clone;
-        background-color: $color-primary-dark;
+        background-color: black;
         
 
         
     }
 
     &__description{
-        padding: 2.2rem 3rem;
+        padding: 6rem 3rem;
         color: black;
         font-size: 2rem;
 
-        @include responsive(phone) {
-            display: none;
-        }
-
-        @include responsive(tab-port) {
-            display: none;
-        }
-
-        @include responsive(tab-land) {
-            display: none;
-        }
+       
     }
 
-    &__details {
-        padding: 3rem;
-        
-
-        ul {
-            list-style: none;
-            width: 80%;
-            margin: 0 auto;
-
-            li {
-                text-align: center;
-                font-size: 1.5rem;
-                padding: 1rem;
-
-                &:not(:last-child) {
-                    border-bottom: 1px solid $color-grey-light-2;
-                }
-            }
-        }
-    }
 }
 
 .card:nth-child(odd) .card__back{
     background-color: $color-primary;
 
-    @include responsive(phone) {
-        transform: rotateY(0deg);
-        background-color: transparent;
-    }
-
-    @include responsive(tab-port) {
-        transform: rotateY(0deg);
-        background-color: transparent;
-    }
-
-    @include responsive(tab-land) {
-        transform: rotateY(0deg);
-        background-color: transparent;
-    }
+    
 }
 
-.card:nth-child(even) .card__back {
-    background-color: $color-primary-dark;
 
-    @include responsive(phone) {
-        transform: rotateY(0deg);
-        background-color: transparent;
-    }
-
-    @include responsive(tab-port) {
-        transform: rotateY(0deg);
-        background-color: transparent;
-    }
-
-    @include responsive(tab-land) {
-        transform: rotateY(0deg);
-        background-color: transparent;
-    }
-
-
-}
 
 .card:nth-child(odd) .card__picture {
     background-color: $color-primary;
@@ -243,42 +105,6 @@
 
 }
 
-.card:nth-child(odd) .card__heading-span {
-    background-color: $color-primary;
-}
-
-.card:nth-child(even) .card__heading-span {
-    background-color: $color-primary-dark;
-}
 
 
 
-.mobile{
-    
-    .card__front{
-        
-    }
-    .card__picture{
-        height: 120%;
-    }
-
-    .card_details{
-        height: 10%;
-    }
-
-    .card__heading {
-        font-size: 2.8rem;
-        font-weight: 300;
-        text-transform: uppercase;
-        text-align: right;
-        color: white;
-        right: 0rem;
-        width: 100%;
-        top: 30rem;
-
-        .card__heading-span{
-            background-color: black;
-        }
-
-    }
-}

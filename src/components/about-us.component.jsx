@@ -6,7 +6,7 @@ export default function AboutUs() {
     return (
         <section className='about-section'>
             <h2 className="header-secondary">
-                What I bring you
+                What We bring you
             </h2>
             <div className="row">
                 <div className="col-1-of-3">

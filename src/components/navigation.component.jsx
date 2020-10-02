@@ -8,7 +8,6 @@ export default function Navigation() {
       const checkbox = document.querySelector(".navigation__checkbox");
       Array.from(navLinks).map((navLink) =>
         navLink.addEventListener("click", function () {
-          console.log(checkbox.checked);
           checkbox.checked = false;
         })
       );
@@ -35,17 +34,25 @@ export default function Navigation() {
                     </NavLink>
                 </li>
                 <li className="navigation__item">
-                    <NavLink exact to="/portfolio/website" 
+                    <NavLink  to="/portfolio/website/top+fashion" 
                         className="navigation__link"
                         activeClassName='active-class'>
                         portfolio
                     </NavLink>
                 </li>
                 <li className="navigation__item">
+                    <NavLink exact to="/services" 
+                        className="navigation__link"
+                        activeClassName='active-class'>
+                        services
+                    </NavLink>
+                </li>
+                <li className="navigation__item">
                     <NavLink exact to="/faq" 
                         activeClassName='active-class' 
                         className="navigation__link">
-                        faq</NavLink></li>
+                        faq
+                    </NavLink></li>
                 <li className="navigation__item">
                     <NavLink to="/contact" 
                         activeClassName='active-class' 
