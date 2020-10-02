@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import './App.css';
-import {Redirect, Route, Switch, withRouter} from 'react-router-dom';
+import { Route, Switch, withRouter} from 'react-router-dom';
 import HomePage from './pages/home-page';
 import Navigation from './components/navigation.component';
 import ReviewsPage from './pages/reviews-page';

@@ -20,7 +20,7 @@ export default function ReviewList() {
         return () => {
             
         }
-    }, [])
+    }, [ref])
 
     
     return (
