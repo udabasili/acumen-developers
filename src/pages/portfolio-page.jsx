@@ -2,52 +2,63 @@ import React, { Component } from 'react'
 import MainHeading from '../components/main-heading.component'
 import MobilePortfolio from '../components/mobile-portfolio.component'
 import WebsitePortfolio from '../components/website-portfolio.component'
-import { NavLink } from 'react-router-dom'
+import { NavLink, withRouter } from 'react-router-dom'
 
-export default class PortfolioPage extends Component {
+class PortfolioPage extends Component {
     constructor(props){
         super (props);
         this.state = {
-            websiteName: props.match.params.websiteName,
-            mobileName: props.match.params.mobileName
+            websiteName: props.match.params.websiteName || 'top+fashion',
+            mobileName: props.match.params.mobileName || 'cyber+social'
         }
     }
     componentDidMount(){
+        console.log(this.props.match.params.mobileName)
 
     }
 
     componentDidUpdate(prevProps, prevState){
         if(this.props.match.params !== prevProps.match.params || 
             this.props.match.name !== prevProps.match.name) {
-
-            if (this.props.match.params.websiteName === undefined){
-                this.setState((prevState) =>({
-                    ...prevState,
-                    websiteName: 'top+fashion',
-                                    mobileName: this.props.match.params.mobileName,
+                this.handleRoute()
 
 
-                }))
-                return;
-            }
-            if (this.props.match.params.mobileName === undefined) {
-                console.log(this.props.match.params.mobileName)
-                this.setState((prevState) => ({
-                    ...prevState,
-                    mobileName: 'cyber+social',
-                                    websiteName: this.props.match.params.websiteName
+        }
+    }
 
-                }))
-                return;
-            }
+    handleRoute = () =>{
+        console.log(this.props.match.params.websiteName === undefined)
+        if (this.props.match.params.websiteName === undefined || 
+            this.props.match.params.websiteName === 'undefined') {
+            this.setState((prevState) => ({
+                ...prevState,
+                websiteName: 'top+fashion',
+                mobileName: this.props.match.params.mobileName
 
+            }))
+            return;
+        }
+        if (this.props.match.params.mobileName === 'undefined' ||
+            this.props.match.params.mobileName === undefined) {
+            console.log(this.props.match.params.mobileName)
+            this.setState((prevState) => ({
+                ...prevState,
+                mobileName: 'cyber+social',
+                websiteName: this.props.match.params.websiteName
 
+            }))
+            return;
         }
     }
 
     render() {
         const title = this.props.title
         const {mobileName, websiteName} = this.state
+        this.props.history.listen(() =>{
+            console.log('here')
+            this.handleRoute()
+
+        })
         return (
             <div className='portfolio-page'>
                 <MainHeading title='works'/>
@@ -83,3 +94,5 @@ export default class PortfolioPage extends Component {
         )
     }
 }
+
+export default withRouter(PortfolioPage)

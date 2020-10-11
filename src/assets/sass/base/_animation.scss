@@ -7,3 +7,21 @@
         transform: rotate(360deg);
     }
 }
+
+@keyframes loading {
+    0% {
+        transform: translateY(0px);
+        background-color: black;
+    }
+
+    50% {
+        transform: translateY(50px);
+        background-color: $color-primary-light;
+    }
+
+    100% {
+        transform: translateY(0px);
+        background-color: $color-primary;
+    }
+}
+

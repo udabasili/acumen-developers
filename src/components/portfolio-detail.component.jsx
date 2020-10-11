@@ -6,6 +6,7 @@ import 'react-slideshow-image/dist/styles.css'
 import Image2 from '../assets/images/Image.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCode } from '@fortawesome/free-solid-svg-icons';
+import LazyLoading from './lazy-loading.component';
 
 export default function PortfolioDetail({match, mobile, portfolioData}) {
     let name ;
@@ -39,13 +40,18 @@ export default function PortfolioDetail({match, mobile, portfolioData}) {
             <div className='portfolio-detail__slide'>
                 <Slide {...properties} >
                     <div className="each-slide">
-                        <div style={{ 
+                        <LazyLoading
+                            src={data.images.default[0]}
+                            
+                            />
+                        {/* <div 
+                        style={{ 
                             backgroundImage: data.images === undefined ?
                                 `url(${slideImages[0]})` :
                                 `url(${data.images.default[0]})`
                                 , 
                              
-                            }}></div>
+                            }}/> */}
                         </div>
                         <div className="each-slide">
                         <div style={{ backgroundImage: data.images === undefined ?

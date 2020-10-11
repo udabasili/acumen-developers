@@ -236,7 +236,64 @@
         flex-direction: column;
     }
 
-    .each-slide>div {
+
+    .each-slide{
+        position: relative;
+    }
+    .each-slide
+    
+
+        .image-loader{
+            position:absolute;
+            top:25%;
+            left:50%;
+            transform:translate(-50%, -50%);
+
+        &__point {
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            background-color: $color-primary-dark;
+            border-radius: 50%;
+            animation: loading 1.5s cubic-bezier(.8, .5, .2, 1.4) infinite;
+            transform-origin: bottom center;
+            position: relative;
+        }
+
+        &__point-1 {
+            animation-delay: 0.1s;
+        }
+
+        &__point-2 {
+            animation-delay: 0.2s;
+        }
+
+        &__point-3 {
+            animation-delay: 0.3s;
+        }
+
+        &__point-4 {
+            animation-delay: 0.4s;
+        }
+
+        &__point-5 {
+            animation-delay: 0.5s;
+        }
+
+        &__point-6 {
+            animation-delay: 0.6s;
+        }
+
+        &__point-7 {
+            animation-delay: 0.7s;
+        }
+
+        &__point-8 {
+            animation-delay: 0.8s;
+        }
+    }
+
+    .each-slide>.image {
 
         background-blend-mode: normal;
         background-position: top;
@@ -322,9 +379,19 @@
             }
         }
 
-        .each-slide>div {
-            background-color: white;
+         div {
+            background-color: black;
             background-repeat: no-repeat;
+            background-blend-mode: luminosity;
+            background-position: top left;
+        }
+
+
+        .each-slide > .image {
+            background-color: black;
+            background-repeat: no-repeat;
+            background-blend-mode: luminosity;
+            background-position: top left;
 
 
 
@@ -422,12 +489,11 @@
             height: 30vh;
         }
     }
-
-
-    .each-slide > div{
+    .each-slide > .image{
         background-size: 100% 100%;
-        background-blend-mode: normal;
         background-repeat: no-repeat;
+        background-blend-mode: luminosity;
+        background-position: top left;
 
         @include responsive(phone) {
             background-size: 100% 170%;
@@ -439,6 +505,7 @@
             background-repeat: repeat;
         }
     }
+
 
         .header-tertiary {
             position: relative;
