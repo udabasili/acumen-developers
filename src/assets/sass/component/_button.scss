@@ -5,7 +5,7 @@
 
     @include responsive(phone) {
         display: flex;
-        margin: 3rem auto;
+        margin: 1rem auto;
         width: 100%;
         justify-content: center;
     }

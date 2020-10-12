@@ -2,24 +2,40 @@
     display: block;
     font-family: 'Bangers',
     cursive;
-    font-size: 6vw;
+    font-size: 6rem;
     font-weight: bolder;
     text-align: center;
     text-transform: uppercase;
+
+     @include responsive(phone) {
+         font-size: 3rem;
+         
+     }
+
+     @include responsive(tab-port) {
+        font-size: 4rem;
+     }
 }
 
 .header-secondary {
-    font-size: 3rem;
+    font-size: 4rem;
     text-transform: uppercase;
-        font-family: 'Open Sans Condensed',
-        sans-serif;
-
+    font-family: 'Open Sans Condensed',sans-serif;
     font-weight: 700;
     display: inline-block;
     text-align: center;
     padding-bottom: 2rem;
     color: $color-primary-dark;
     letter-spacing: .2rem;
+
+     @include responsive(phone) {
+         font-size: 2.5rem;
+         
+     }
+
+     @include responsive(tab-port) {
+         font-size: 3rem;
+     }
 
     
 }

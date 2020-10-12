@@ -21,7 +21,8 @@
 
         @include responsive(phone){
             flex-basis: 80%;
-            font-size: 12px;
+            font-size: 1.5rem;
+            padding-left: 1rem;
             justify-content: flex-start;
         }
 
@@ -31,6 +32,10 @@
 
         @include responsive(tab-land) {
             flex-basis: 50%;
+        }
+
+        span{
+            text-transform: uppercase;
         }
 
         span:first-child{
@@ -43,8 +48,8 @@
                 height: 3rem;
 
                 @include responsive(phone) {
-                    width: 20px;
-                    height: 20px;
+                    width: 3rem;
+                    height: 3rem;
                 }
 
 
@@ -52,6 +57,8 @@
                 
             }
         }
+
+    
     }
 
     &__list{
@@ -133,6 +140,7 @@
         border: 2px solid white;
         display: none;
         width: 4rem;
+        background-color: black;
         height: 4rem;
         border-radius: 50%;
         position: relative;
@@ -141,6 +149,10 @@
 
         @include responsive(phone){
             display: flex;
+             width: 3rem;
+             background-color: black;
+             height: 3rem;
+             border-radius: 50%;
         }
 
         @include responsive(tab-port) {
@@ -148,9 +160,7 @@
         }
 
         &:hover{
-            @include responsive(phone) {
-                background-color: $color-primary-light;
-            }
+            
 
             @include responsive(tab-port) {
                 background-color: $color-primary-light;
@@ -165,6 +175,10 @@
     &__checkbox:checked ~ &__list{
         display: flex;
 
+    }
+
+    &__checkbox:checked~&__button  {
+        background-color: $color-primary;
     }
     
     &__checkbox:checked~&__button &__icon {
@@ -197,6 +211,10 @@
             position: absolute;
             background-color: white;
             transform: translate(-50%);
+
+              @include responsive(phone) {
+                  width: 1.6rem;
+              }
         }
 
         &::before {

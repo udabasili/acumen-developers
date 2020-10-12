@@ -27,14 +27,17 @@ export default function Header() {
           </Slide>
         </div>
         <div className="header__right">
-          We bring you{" "}
-          <ReactTypingEffect
+          <h1 className='header-primary'>
+             We bring you {" "}
+              <ReactTypingEffect
             className="typing-style"
             speed={100}
             eraseDelay={100}
             typingDelay={2000}
             text={["excellence.", "quality", "security"]}
           />
+          </h1>
+         
         </div>
       </header>
     );
