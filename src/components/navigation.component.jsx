@@ -60,10 +60,6 @@ export default function Navigation() {
                             contact
                     </NavLink>
                 </li>
-                <li className="navigation__item">
-                    <NavLink to="/reviews" 
-                        activeClassName='active-class' 
-                    className="navigation__link">reviews</NavLink></li>
             </ul>
         </nav>
     )
