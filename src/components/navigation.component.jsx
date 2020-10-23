@@ -60,6 +60,13 @@ export default function Navigation() {
                             contact
                     </NavLink>
                 </li>
+                 <li className="navigation__item">
+                    <NavLink to="/about" 
+                        activeClassName='active-class' 
+                        className="navigation__link">
+                            about
+                    </NavLink>
+                </li>
             </ul>
         </nav>
     )

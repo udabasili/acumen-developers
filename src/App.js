@@ -11,7 +11,7 @@ import Footer from './components/footer.component';
 import ReactGA from 'react-ga';
 import NotFoundPage from './components/not-found';
 import ServicePage from './pages/services-page';
-
+import About from './pages/about-page';
 
 function App({history}) {
 	
@@ -37,10 +37,11 @@ function App({history}) {
 			<Route path ='/faq' exact component ={FAQPage}/>
 			<Route path ='/reviews' exact component ={ReviewsPage}/>
 			<Route path ='/services' exact component ={ServicePage}/>
-			<Route path = '/portfolio/mobile/:mobileName' exact render= {(props) =>(
+			<Route path ='/about' exact component ={About}/>
+			<Route path = '/portfolio/mobile/:mobileName'  render= {(props) =>(
 				<PortfolioPage {...props} title='mobile'/>
 			)}/>
-			<Route path = '/portfolio/website/:websiteName' exact render= {(props) =>(
+			<Route path = '/portfolio/website/:websiteName'  render= {(props) =>(
 				<PortfolioPage {...props} title='website'/>
 			)}/>
 			<Route path='/404' component={NotFoundPage} />

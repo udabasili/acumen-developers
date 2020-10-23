@@ -83,10 +83,9 @@ export default class ContactPage extends Component {
               pauseOnHover
             />
             <MainHeading title="Contact" />
-            <section className="contact">
-              <h2 className="header-secondary">Contact Us </h2>
-              <h3 className="header-tertiary">Message for Quota</h3>
+            <section className="contact">              
               <form className="form" onSubmit={this.handleSubmit}>
+                <h2 className="header-secondary">Message for Quota</h2>
                 <div className="form__control">
                   <input
                     type="text"
@@ -157,6 +156,8 @@ export default class ContactPage extends Component {
                 </div>
                 <input type="submit" className="button" value="Submit" />
               </form>
+              
+
             </section>
           </div>
         );

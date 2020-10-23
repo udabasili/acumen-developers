@@ -5,9 +5,10 @@ export default function LazyLoading({src , placeholder, ...props}) {
     const [image, setImage] = useState(null)
 
     useEffect(() => {
+        setImage(null)
         const imageLoading = new Image();
         imageLoading.src = src 
-        imageLoading.onload =() =>{
+        imageLoading.onload =(e) =>{
             setImage(src)
         }
         

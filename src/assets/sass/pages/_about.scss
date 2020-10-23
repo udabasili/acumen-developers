@@ -1,0 +1,56 @@
+.about-page {
+    min-height: 100vh;
+    text-align: center;
+
+    .about{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+        grid-template-rows: 70vh;
+        column-gap: 5rem;
+        margin: 10rem auto;
+
+        .user{
+
+            &__username{
+                font-size: 3rem;
+                position: absolute;
+                top: -20%;
+                left: 50%;
+            }
+            &__image-container{
+                border: 10px solid black;
+                shape-outside: inset(10px);
+                position: relative;
+                overflow: hidden;
+                cursor: pointer;
+                transform: scale(1) translate(0);
+                transition: all 2ms;
+
+
+            }
+
+            &__image{
+                width: 100%;
+            }
+
+            &__info{
+                padding: 1rem 3rem;
+
+                .header-tertiary{
+                    text-transform: uppercase;
+                }
+
+                .paragraph{
+                    line-height: 2;
+
+                    text-align: justify;
+                }
+                .email{
+                    margin: 3rem 2rem;
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+}
