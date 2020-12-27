@@ -12,21 +12,12 @@ export default function LazyLoading({src , placeholder, ...props}) {
             setImage(src)
         }
         
-    }, [src, placeholder])
+    }, [src])
         return (
             image ?
-                <div className='image' {...props} style={{ backgroundImage: `url(${image || placeholder})` }} /> :
-                <div class="image-loader">
-                    <span class="image-loader__point image-loader__point-1"></span>
-                    <span class="image-loader__point image-loader__point-2"></span>
-                    <span class="image-loader__point image-loader__point-3"></span>
-                    <span class="image-loader__point image-loader__point-4"></span>
-                    <span class="image-loader__point image-loader__point-5"></span>
-                    <span class="image-loader__point image-loader__point-6"></span>
-                    <span class="image-loader__point image-loader__point-7"></span>
-                    <span class="image-loader__point image-loader__point-8"></span>
-                </div>
+                <div className=' portfolio-slide-image' {...props} style={{ backgroundImage: `url(${src})` }} /> :
 
-
+                <div style={{ backgroundImage: `url(${src})` }} className="image-loader" />
+                
         )
 }

@@ -136,13 +136,10 @@
         display: inherit;
         flex-direction: inherit;
         align-items: center;
-
         width: 100%;
         border-bottom: 2px solid black;
         padding: 3rem 1rem;
         text-decoration: none;
-
-
 
         @include responsive(phone){
             display: flex;
@@ -151,6 +148,7 @@
             height: 100%;
             border-bottom: 2px solid $color-primary;
             text-align: center;
+            padding: 0;
         }
 
         @include responsive(tab-port) {
@@ -159,6 +157,7 @@
             justify-content: space-around;
             height: 100%;
             text-align: center;
+            padding: 0;
         }
 
         &:hover{
@@ -172,8 +171,10 @@
         border-radius: 50%;
         background-color: $color-primary-dark;
         display: flex;
+        background-size: cover;
         justify-content: center;
         align-items: center;
+        background-blend-mode: luminosity;
 
         @include responsive(phone){
             width: 5rem;
@@ -256,7 +257,6 @@
     display: grid;
     grid-template-rows: 50% ;
     grid-template-columns: 100%;
-    background-color:black;
     color: white;
 
     @include responsive(phone){
@@ -265,79 +265,13 @@
         flex-direction: column;
     }
 
-    @include responsive(tab-port) {
-        display: flex;
-        height: 80vh;
-        flex-direction: column;
-    }
+    // @include responsive(tab-port) {
+    //     display: flex;
+    //     height: 80vh;
+    //     flex-direction: column;
+    // }
 
 
-    .each-slide{
-        position: relative;
-    }
-    .each-slide
-    
-
-        .image-loader{
-            position:absolute;
-            width: 100%;
-            top:25%;
-            left:50%;
-            transform:translate(-50%, -50%);
-
-        &__point {
-            display: inline-block;
-            width: 15px;
-            height: 15px;
-            background-color: $color-primary-dark;
-            border-radius: 50%;
-            animation: loading 1.5s cubic-bezier(.8, .5, .2, 1.4) infinite;
-            transform-origin: bottom center;
-            position: relative;
-        }
-
-        &__point-1 {
-            animation-delay: 0.1s;
-        }
-
-        &__point-2 {
-            animation-delay: 0.2s;
-        }
-
-        &__point-3 {
-            animation-delay: 0.3s;
-        }
-
-        &__point-4 {
-            animation-delay: 0.4s;
-        }
-
-        &__point-5 {
-            animation-delay: 0.5s;
-        }
-
-        &__point-6 {
-            animation-delay: 0.6s;
-        }
-
-        &__point-7 {
-            animation-delay: 0.7s;
-        }
-
-        &__point-8 {
-            animation-delay: 0.8s;
-        }
-    }
-
-    .each-slide> div {
-
-        background-blend-mode: normal;
-        background-position: top;
-
-        @include responsive(tab-port) {
-            background-size: 100% 100%;
-        }
-    }
 
 
 
@@ -354,7 +288,6 @@
 
         @include responsive(tab-port) {
             display: unset;
-            height: 30vh;
             width: 100%;
         }
 
@@ -376,94 +309,28 @@
 
             
         }
-        .react-slideshow-wrapper .images-wrap {
-            height: 100%;
-        }
+    
 
-        .react-slideshow-container .default-nav {
-            display: flex;
-        }
-
-        .react-slideshow-wrapper.slide {
-            width: 100%;
-            height: 50vh;
-
-            @include responsive(phone){
-                height: 40vh;
-
-            }
-
-            @include responsive(tab-port) {
-                height: 40vh;
-            }
-        }
-
-        .each-slide {
-            background-color: white;
-            height: 100%;
-
-            @include responsive(phone) {
-                height: unset;
-            }
-            @include responsive(tab-port) {
-                height: unset;
-
-            }
-        }
-
-         div {
-            background-color: black;
-            background-repeat: no-repeat;
-            background-blend-mode: luminosity;
-            background-position: top left;
-        }
-
-
-        .each-slide > div {
-            background-color: black;
-            background-repeat: no-repeat;
-            background-blend-mode: luminosity;
-            background-position: top left;
-
-
-
-            @include responsive(phone){
-                background-size: 100% 100%;
-
-            }
-            @include responsive(tab-port) {
-                background-size: contain;
-            }
-        }
     }
 
     &__information {
-        width: 60%;
-        margin: 4rem auto;
+        width: 100%;
+        margin: 0 auto;
+        position: relative;
+        background-color: black;
         text-align: justify;
+        padding: 3rem;
 
 
         @include responsive(phone){
             display: flex;
             align-items: center;
-            justify-content: center;
             flex-direction: column;
-            margin: 1rem auto;
+            height: 50vh;
             background-color: black;
-            width: 100%;
         }
 
-        @include responsive(tab-port) {
-            display: flex;
-                        min-height: 50vh;
 
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            background-color: black;
-            width: 100%;
-            padding: 3rem;
-        }
 
         .paragraph{
             font-size: 1.5rem;
@@ -490,7 +357,7 @@
 
                 @include responsive(phone){
                     font-size: 1.4rem;
-                                    padding: .5rem 1rem;
+                    padding: .5rem 1rem;
 
                 }
             }
@@ -501,44 +368,6 @@
 .mobile{
     grid-template-rows: 100vh;
     grid-template-columns: 40% 60%;
-
-    @include responsive(phone){
-        display: flex;
-        height: 100%;
-    }
-
-    
-
-    .react-slideshow-wrapper.slide {
-        width: 100%;
-        height: 100%;
-
-        @include responsive(phone) {
-            height: 40vh;
-
-        }
-
-        @include responsive(tab-port) {
-            height: 30vh;
-        }
-    }
-    .each-slide > div{
-        background-size: 100% 100%;
-        background-repeat: no-repeat;
-        background-blend-mode: luminosity;
-        background-position: top left;
-
-        @include responsive(phone) {
-            background-size: cover;
-            background-repeat: repeat;
-        }
-
-        @include responsive(tab-port) {
-            background-size: cover;
-            background-repeat: repeat;
-        }
-    }
-
 
         .header-tertiary {
             position: relative;
@@ -565,20 +394,90 @@
 
         .portfolio-detail__information {
             width: 100%;
-            margin: 4rem auto;
-            padding: 3rem;
             text-align: justify;
-            height: 30vh;
+            margin: 0 auto;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
 
             @include responsive(phone) {
-                margin: 1.2rem auto;
+                margin: 0 auto;
+                height: 50vh;
+
             }
+        
                 
         }
 
         .button-container{
             display: flex;
+            justify-content: center;
 
             
         }
+}
+
+.portfolio-slide-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    height: 100vh;
+    background-color: black;
+    background-repeat: no-repeat;
+    background-blend-mode: luminosity;
+    background-position: top left;
+
+    @include responsive(phone) {
+        background-position: center;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        height: 40vh;
+        background-size: 100% 140%;
+
+    }
+
+     @include responsive(tab-port) {
+        background-position: center;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        height: 100%;
+        background-size: 100% 100%;
+    }
+
+}
+
+.image-loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.589);
+    background-repeat: no-repeat;
+    background-blend-mode: luminosity;
+    background-size: cover;
+    height: 100vh;
+    background-position: top left;
+    height: 100vh;
+    filter: blur(2vw);
+    will-change: transform, opacity;
+    animation: reveal 1s ease-out infinite;
+
+     @include responsive(phone) {
+        background-position: center;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        height: 40vh;
+        background-size: 100% 140%;
+
+    }
+
+     @include responsive(tab-port) {
+        background-position: center;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        height: 100%;
+        background-size: 100% 100%;
+    }
+
 }

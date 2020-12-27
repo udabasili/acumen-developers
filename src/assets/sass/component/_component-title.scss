@@ -1,0 +1,55 @@
+.component-title{
+    position: relative;
+
+    &::after{
+         content: '';
+         position: absolute;
+         border-bottom: 15px solid transparent;
+         border-left: 15px solid transparent;
+         border-top: 15px solid$color-primary-dark;
+         left: -15px;
+         z-index: 1;
+         top: 100%;
+        
+         @include responsive(tab-port){
+             content: none;
+         }
+
+         @include responsive(phone){
+                content: none;
+            }
+
+
+    }
+
+    &__header{
+        background-color: $color-primary;
+        padding: 2rem 3rem;
+        position: relative;
+        font-size: 2rem;
+        text-transform: uppercase;
+        color: white;
+        font-weight: bolder;
+        display: inline-block;
+
+        &::before{
+            content: ' ';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 10%;
+            height: 100%;
+            display: block;
+            background-color: $color-primary;
+            transform: translateX(-100%);
+
+            @include responsive(tab-port){
+                content: none;
+            }
+
+            @include responsive(phone){
+                content: none;
+            }
+        }
+    }
+}

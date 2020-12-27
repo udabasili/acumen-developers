@@ -1,9 +1,10 @@
 .form{
-    width: 40%;
+    width: 80%;
     margin: 3rem auto;
 
     @include responsive(phone){
         width: 80%;
+        margin: 0 auto;
     }
 
     @include responsive(tab-port) {

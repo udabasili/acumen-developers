@@ -3,3 +3,99 @@
 
 }
 
+.contact{
+
+    .btn {
+
+      &:link,
+      &:visited{
+        background-color: $color-primary;
+      display: inline-block;
+      font-weight: bolder;
+      padding: 1.4em 3em;
+      font-size: 1.8em;
+      margin-top: 2em;
+      text-transform: uppercase;
+      cursor: pointer;
+      color: black;
+      text-decoration: none;
+
+
+      }
+      
+      &:hover,
+      &:active{
+        background-color: black;
+        color: white;
+      }
+
+    }
+
+    .container{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        @include responsive(phone){
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(2, 1fr);
+        }
+
+        @include responsive(tab-port){
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(2, 1fr);
+        }
+
+        @include responsive(tab-land){
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(2, 1fr);
+        }
+    }
+    &__list{
+        margin: 9rem auto;
+        display: flex;
+        justify-content: center;
+
+        @include responsive(phone){
+            flex-direction: column;
+        }
+
+        @include responsive(tab-port){
+            flex-direction: column;
+        }
+    }
+
+    &__item{
+        display: flex;
+        align-items: center;
+
+        @include responsive(phone){
+            margin: 3rem;
+        }
+
+        @include responsive(tab-port){
+            margin: 3rem;
+        }
+        .icon{
+            color: $color-primary-dark;
+            margin: 0 2rem;
+            font-size: 4rem;
+        }
+    }
+
+    &__detail{
+        display: flex;
+        font-size: 1.5rem;
+        align-items: flex-start;
+        text-align: left;
+        justify-content: flex-start;
+        flex-direction: column;
+
+        .title{
+            font-weight: bold;
+        }
+
+        .desc{
+
+        }
+    }
+}
