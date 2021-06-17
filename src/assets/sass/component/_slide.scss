@@ -2,27 +2,11 @@
     position: relative;
     width: 100%;
     overflow: hidden;
-    height: 90vh;
+    height: 100vh;
     box-shadow:  0 1rem 2.4rem 10px rgba(0, 0, 0, 0.089);
-    background-color: white;
+    background-color: black;
     justify-self: right;
-
-    @include responsive(phone){
-      height: 60vh;
-      width: 100%;
-
-    }
-
-    @include responsive(tab-port) {
-      height: 90vh;
-      width: 100%;
-
-    }
-
-    @include responsive(tab-land) {
-      height: 90vh;
-      width: 100%;
-    }
+   
 }
 
 
@@ -31,152 +15,103 @@
   flex-direction: column;
   width: 100%;
   height: 100%;
+  position: relative;
 
 
+  &__text{
+     position: absolute;
+    transform: translate(-50%, -50%) ;
+    top: 40%;
+    transform-origin: 50% 40%;
+    left: 50%;
+    width: 80%;
+    background: $color-primary;
+    padding: 2rem 3rem;
+
+    
+
+    .title{
+      text-transform: uppercase;
+      word-wrap: break-word;
+      display: block;
+      color: black;
+      font-weight: bolder;
+      line-height: 1.2;
+      position: relative;
+      text-align: center;
+
+      @include responsive(tab-land){
+          color: black;
+        }
+
+      &:not(:last-child){
+        padding-bottom: 2rem;
+      }
+
+
+      &__main{
+        font-size: 13rem;
+
+        @include responsive(tab-land){
+          font-size: 9vw;
+        }
+
+      }
+
+      &__mini{
+        font-size: 2.4rem;
+        font-weight: 700;
+
+      }
+
+      &__sub{
+        font-size: 2.5rem;
+        font-weight: 800;
+
+        @include responsive(tab-land){
+          font-size: 2rem;
+        }
+
+      }
+    }
+  }
+
+  &__image{
+    height: 100%;
+    position: absolute;
+    top: 5px;
+    display: flex;
+    
+    span{
+      width: 100vw;
+      height: 100%;
+      background-size: cover;
+      background-position: bottom;
+
+     
+    } 
+  }
 
   &__content{
     display: flex;
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
+    object-fit: contain;
     width: 100%;
     height: 100%;
     justify-content: flex-end;
 
-    
   }
 
-  &__right{
-    width: 50%;
-    text-align: left;
-    animation-name: slideComponent;
-    animation-duration: 2s;
-    vertical-align: center;
-    display: inline-block;
-    align-self: center;
-
-    @include responsive(phone) {
-      width: 80%;
-      padding: 0;
-      align-self: center;
-      margin: 0 auto;
-
-    }
-
-    @include responsive(tab-port){
-      width: 80%;
-      padding: 0;
-      align-self: center;
-      margin: 0 auto;
-
-    }
-
-    @include responsive(tab-land){
-      width: 80%;
-      padding: 0;
-      align-self: center;
-      margin: 0 auto;
-
-    }
-
-    .title{
-      font-size: 6rem;
-      font-weight: bolder;
-      text-transform: uppercase;
-      padding: 1rem 1rem;
-      word-wrap: break-word;
-      text-align: left;
-      color: black;
-      line-height: 1.2;
-      position: relative;
-
-
-      &::before{
-        content: ' ';
-        position: absolute;
-        border-left: 20px solid $color-primary-dark; 
-        border-top: 20px solid $color-primary-dark; 
-        width: 80px;
-        left: -20px;
-        top: -10px;
-        height: 80px;
-        display: inline-block;
-
-
-      }
-
-      @include responsive(phone) {
-        font-weight: bolder;
-        text-transform: uppercase;
-        line-height: 1.2;
-        background-color: $color-primary;
-        padding: 10px;
-        width: 100%;
-        font-size: 4rem;
-        color: white;
-      }
-
-      @include responsive(tab-port) {
-        font-weight: bolder;
-        text-transform: uppercase;
-        line-height: 1.2;
-        background-color: $color-primary;
-        padding: 10px;
-        width: 100%;
-        color: white;
-      }
-
-      @include responsive(tab-land) {
-        font-weight: bolder;
-        text-transform: uppercase;
-        padding: 3rem 1rem;
-         background-color: $color-primary;
-        line-height: 1.2;
-        color: white;
-      }
-    }
-
-    .btn {
-
-      &:link,
-      &:visited{
-        background-color: $color-primary;
-      display: inline-block;
-      font-weight: bolder;
-      padding: 1.4em 2em;
-      font-size: 1.4em;
-      margin-top: 2em;
-      text-transform: uppercase;
-      cursor: pointer;
-      color: black;
-      text-decoration: none;
-
-      @include responsive(phone) {
-        color: white;
-        background-color: black;
-      }
-
-      @include responsive(tab-port) {
-        color: white;
-        background-color: black;
-      }
-
-       @include responsive(tab-land) {
-        color: white;
-        background-color: black;
-      }
-
-      }
-      
-      &:hover,
-      &:active{
-        background-color: black;
-        color: white;
-      }
-
-    }
+  &__background{
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    display: flex;
+    justify-content: center
   }
-
-
 
   &__progress{
     background-color: $color-primary;

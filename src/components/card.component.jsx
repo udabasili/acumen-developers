@@ -8,7 +8,6 @@ export default function Card({
         mobile=null,
         gitHub,
         programs}) {
-
             return (
               <div className={`card ${mobile}`}>
                 <div className="card__front card__side">

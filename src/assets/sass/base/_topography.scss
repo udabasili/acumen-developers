@@ -1,11 +1,19 @@
 .header-primary {
-    display: block;
     font-family: 'Bangers',
     cursive;
     font-size: 6rem;
     font-weight: bolder;
     text-align: center;
     text-transform: uppercase;
+    display: block;
+
+    .mini-title{
+        display: block;
+    }
+
+    .sub-title{
+        display: block;
+    }
 
      @include responsive(phone) {
          font-size: 3rem;
@@ -43,7 +51,7 @@
 .header-tertiary {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: bolder;
-    font-size: 2.1rem;
+    font-size: 2.4rem;
     text-transform: capitalize;
     color: black;
 
@@ -59,6 +67,45 @@
 
 
 
+}
+
+.header-custom{
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    color: $color-primary-dark;
+    margin: 0 auto;
+    font-size: 4rem;
+    align-items: center;
+    column-gap: 2rem;
+
+    @include responsive(tab-port){
+            display: block;
+            font-size: 3.4rem;
+    }
+
+    &::before,
+    &::after{
+        content: ' ';
+        display: block;
+        height: 10px;
+        background-color: $color-primary-dark;
+
+        @include responsive(tab-port){
+            display: none;
+        }
+    }
+}
+
+.heading-4{
+    font-size: 2rem;
+     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bolder;
+    text-transform: capitalize;
+    color: black;
+
+    @include responsive(tab-port){
+        display: none;
+    }
 }
 
 .paragraph{

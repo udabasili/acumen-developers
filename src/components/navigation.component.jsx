@@ -1,8 +1,9 @@
 import React from 'react'
-import {  NavLink} from 'react-router-dom'
-import Logo from '../assets/images/Acumen-Logo.png'
-export default function Navigation() {
+import { NavLink, useLocation} from 'react-router-dom'
+import {ReactComponent as Logo} from '../assets/images/acumen-developers-logo.svg'
 
+export default function Navigation() {
+    const { pathname } = useLocation()
     React.useEffect(() => {
       const navLinks = document.querySelectorAll(".navigation__list");
       const checkbox = document.querySelector(".navigation__checkbox");
@@ -17,9 +18,12 @@ export default function Navigation() {
 
     return (
         <nav className='navigation'>
-            <div className="logo-box">
-                <span><img src={Logo} className='logo' alt='web-logo'/></span>
-                <span>Acumen Developers</span>
+            <div className="logo">
+                <Logo className='logo__icon' />
+                <span className='logo__text'>
+                    <span>Acumen</span>
+                    Developers
+                </span>
             </div>
             <input type='checkbox' className="navigation__checkbox" id='navigate' />
             <label htmlFor="navigate" className="navigation__button" >
@@ -34,8 +38,9 @@ export default function Navigation() {
                     </NavLink>
                 </li>
                 <li className="navigation__item">
-                    <NavLink  to="/portfolio/website/top+fashion" 
+                    <NavLink  to="/portfolio" 
                         className="navigation__link"
+                        isActive={() => pathname.includes('portfolio') }
                         activeClassName='active-class'>
                         portfolio
                     </NavLink>

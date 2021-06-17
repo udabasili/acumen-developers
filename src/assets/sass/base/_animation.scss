@@ -62,3 +62,18 @@
 }
 
 
+@keyframes text{
+    from {transform:  translate(-50%, -50%) scale(.2);}
+    to {transform:  translate(-50%, -50%) scale(1); }
+}
+
+@keyframes rotate{
+    from {transform:  rotate(0);}
+    to {transform:  rotate(360deg); }
+}
+
+
+@keyframes image-slide{
+    from {transform:  translateY(-100%); opacity: 0;}
+    to {transform: translateY(0);  opacity: 1; }
+}

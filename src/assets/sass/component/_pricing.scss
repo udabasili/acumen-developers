@@ -1,104 +1,66 @@
 .section-pricing{
-    width: 90%;
+    width: 60%;
     height: 50vh;
     margin: 20vh auto;
-    display: grid;
-    grid-template-columns: 40% 60%;
-    box-shadow: $box-shadow;
-
-    @include responsive(phone){
-        width: 100%;
-        grid-auto-flow: column;
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(2, 1fr);
-        background-color: white;
-        height: 70vh;
-    }
 
     @include responsive(tab-port){
-        grid-auto-flow: column;
-        background-color: white;
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(2, 1fr);
+        height: max-content;
     }
+
     
 }
 
 .pricing{
-    &__image{
-        height: 100%;
-        background-size: 100% 100%;
-        background-color: white;
-
-        @include responsive(phone){
-            display: none;
-        }
-
-        @include responsive(tab-port){
-            display: none;
-        }
+    &__list{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(27rem, 1fr));
+        column-gap: 9rem;
+        row-gap: 6rem;
+        align-items: flex-start;
     }
 
-    &__content{
-        background-color: white;
-        padding: 2rem 1rem;
-    }
-
-    &__title{
-        height: 30%;
-
-        @include responsive(phone){
-            margin: 1.5rem 0;
-        }
-        span{
-            display: block;
-            font-size: 3rem;
-            font-weight: bolder;
-            text-transform: uppercase;
-
-            @include responsive(phone){
-                display: block ruby;
-            }
-
-            &::first-letter{
-                color: $color-primary;
-            }
-        }
     
-    }
-
     &__item{
-        align-self: center;
-        text-align: left;
+        display: grid;
+        width: auto;
 
-        @include responsive(phone){
-            align-self: unset;
-        }
-
-        .header-tertiary{
-            text-align: left;
-
-            &::before{
-                content: '\2611';
-                color: $color-primary-dark;
-                display: inline-block;
-                padding: 2px 5px;
-            }
-        }
+        grid-template-columns: min-content 1fr;
 
         .description{
             font-size: 1.4rem;
+            text-align: left;
+                    padding-left: 2rem;
+
+            grid-column: 2 / -1;
         }
 
     }
 
-    &__list{
-        display: grid;
-        height: 70%;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        column-gap: 20px;
+    &__title{
+        padding-left: 2rem;
+        text-align: left;
+        align-self: center;
+        justify-self: flex-start;
+    }
 
+    &__icon{
+        height: 5rem;
+        width: 5rem;
+        justify-self: center;
+        align-self: center;
+        grid-row: 1 / 2;
+        background-color:  $color-primary-dark;
+        border: 2px solid  $color-primary-dark;
+        display: flex;
+        border-radius: 50%;
+        justify-content: center;
+        align-items: center;
+
+        svg{
+            font-size: 3rem;
+            color:white;
+            grid-row: 1 / 2;
+        }
     }
 
     

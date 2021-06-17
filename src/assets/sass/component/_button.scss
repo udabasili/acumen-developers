@@ -63,3 +63,43 @@
         color: white;
     }
 }
+
+.btn{
+
+    &--slide{
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate( -50%,-50%);
+        
+      &:link,
+      &:visited{
+        background-color: black;
+        position: absolute;
+        display: inline-block;
+        font-weight: bolder;
+        padding: 1.4em 5em;
+        font-size: 1.9em;
+        margin-top: 2em;
+        text-transform: uppercase;
+        border-radius: 10px;
+        cursor: pointer;
+        color: white;
+        box-shadow: 0 1rem 2rem rgba($color: #000000, $alpha: .2);
+        text-decoration: none;
+
+       @include responsive(tab-port) {
+  
+        padding: 1.4em 2em;
+
+      }
+
+      }
+      
+      &:hover,
+      &:active{
+        opacity: .89;
+      }
+
+    }
+}

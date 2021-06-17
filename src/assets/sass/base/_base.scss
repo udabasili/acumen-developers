@@ -10,9 +10,19 @@ html{
     font-size: 62.5%;
     color: black;
 
-    @include responsive(phone){
+    @include responsive(tab-land){
         font-size: 50%;
     }
+
+    @include responsive(tab-port){
+        font-size: 50%;
+    }
+
+    @include responsive(big-desktop){
+        font-size: 75%;
+    }
+
+    
 }
 
 body {
@@ -53,3 +63,12 @@ section {
         color: black;
     }
 }
+
+[class*='image']{
+    object-fit: cover;
+}
+
+[class*='picture']{
+    object-fit: cover;
+}
+

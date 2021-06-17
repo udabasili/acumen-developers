@@ -1,23 +1,30 @@
 import React, { useEffect, useRef } from 'react'
-import Image from '../assets/images/slide-image1.jpg';
-import Image1 from '../assets/images/slide-image-2.jpg';
-import Image2 from '../assets/images/slide-image-3.jpg';
+import Image from '../assets/images/slides/slide1.jpg';
+import Image1 from '../assets/images/slides/slide2.jpg';
+import Image2 from '../assets/images/slides/slide3.jpg';
 import Slide from './slide.component';
 
 const slideComponent = [
     {
         image: Image,
-        title:'create engaging Websites',
+        miniTitle: 'We',
+        title:'Build Websites',
+        subTitle: 'of high quality'
+
 
     },
     {
         image: Image1,
-        title:'Empowering people and business',
+        miniTitle: 'We',
+        title:'Empower Businesses',
+        subTitle: 'to be successful'
        
     },
     {
         image: Image2,
-        title:'Website building done right',
+        miniTitle: 'We',
+        title:'Match your Budget',
+        subTitle: 'without sacrificing quality'
 
     }
 ]
@@ -40,13 +47,10 @@ export default function SlideContainer() {
         }else{
             ref.current = nextIndex
         }
-        // for(let index = 0 ; index < slideContainer.length; index ++){
-        //     slideContainer[index].style.display = 'block'
-        // }   
         
     }
     useEffect(() => {
-        const startInterval = setInterval(slideChanger, 10000)
+        const startInterval = setInterval(slideChanger, 4000)
         return () => {
             clearInterval(startInterval)
         }

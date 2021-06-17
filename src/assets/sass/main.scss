@@ -20,8 +20,10 @@
 @import './component/component-title';
 @import './component/pricing';
 @import './component/qualities';
-@import './component/portfolio';
+@import './component/preview';
 @import './component/about';
+@import './component/technology';
+@import './component/mobile';
 
 @import'./layouts/header';
 @import './layouts/navigation';
@@ -34,3 +36,4 @@
 @import './pages/review';
 @import './pages/service';
 @import './pages/about';
+@import './pages/details'

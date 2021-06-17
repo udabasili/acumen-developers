@@ -1,0 +1,166 @@
+.section-preview{
+    width: 90%;
+    margin: 20vh auto;
+
+
+}
+
+
+.preview{
+    width: 100%;
+    position: relative;
+
+    &__header{
+        display: flex;
+        position: absolute;
+        bottom: 0;
+        justify-content: space-between;
+        align-items: center;
+        background-color: black;
+        z-index: 10;
+        width: 100%;
+
+    }
+
+    &__list{
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(33rem, 1fr));
+        margin: 0;
+        height: 60vh;
+        row-gap: 5rem;
+        column-gap: 2rem;
+        width: 100%;
+
+        @include responsive(tab-land){
+            column-gap: .2rem;
+
+        }
+
+        @include responsive(tab-port){
+            column-gap: 2rem;
+            grid-template-rows: 90vh;
+            height: max-content;
+        }
+
+    }
+
+     &__item{
+
+        width: auto;
+        background-color: $color-primary-dark;
+        overflow: hidden;
+        box-shadow: 0 1.4rem 4rem rgba($color: #000000, $alpha: .3);
+        position: relative;
+
+        @include responsive(tab-port){
+            cursor: unset;
+        }
+    }
+
+
+    &__image{
+        width: 100%;
+        height: 50vh;
+        background-size: auto 100%;
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+        transition: transform 2s ;
+        align-items: center;
+
+       
+    }
+
+     &__icon{
+            border-radius: 50%;
+            width: 4rem;
+            height: 4rem;
+            border: 4px solid black;
+            overflow: hidden;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+    &__details{
+        height: 60vh;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 10vh 40vh 10vh;
+        justify-content: flex-start;
+        position: relative;
+        width: 100%;
+        z-index: 10;
+        background-color: white;
+        transition: all .6s;
+        text-align: left;
+
+        @include responsive(tab-port){
+            grid-template-rows: 20% 1fr 20%;
+            height: 40vh;
+        }
+
+    }
+
+    &__title{
+        font-weight: bolder;
+        font-size: 3rem;
+        text-transform: capitalize;
+        background-color: $color-primary-dark;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        align-self: center;
+        padding: 2rem;
+        color: black;
+    }
+
+    &__description{
+        font-size: 1.4rem;
+        margin: 2rem 3rem;
+
+    }
+
+    &__item:hover &__details{
+        transform: translateY(-50vh);
+
+        @include responsive(tab-port){
+            transform: none;
+        }
+    }
+
+    &__item:hover &__image{
+        transform: scale(2);
+
+        @include responsive(tab-port){
+            transform: none;
+        }
+    }
+
+    &__link{            
+        &:link, &:visited{
+            cursor: pointer;
+            grid-row: 3 / 4;
+            font-size: 2rem;
+            background-color: black;
+            display: flex;
+            text-transform: uppercase;
+            color: white;
+            font-weight: bolder;
+            justify-content: center;
+            text-decoration: none;
+            flex-direction: column;
+            align-items: center;
+
+        }
+            
+    }
+}
+

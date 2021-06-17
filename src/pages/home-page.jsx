@@ -1,18 +1,18 @@
 import React from 'react'
 import Header from '../components/header.component'
-import OurQualities from '../components/our-qualities'
 import Pricing from '../components/pricing.component'
-import Portfolio from '../components/portfolio.component'
-import Contact from '../components/contact.component'
+// import Preview from '../components/preview.component'
+import AboutMe from '../components/about-me.component'
+import Technologies from '../components/technologies.component'
 
 export default function HomePage() {
     return (
         <div className="home-page">
             <Header/>
-            <OurQualities/>
             <Pricing/>
-            <Portfolio/>
-            <Contact/>
+            <AboutMe/>
+            {/* <Preview/> */}
+            <Technologies/>
         </div>
     )
 }
